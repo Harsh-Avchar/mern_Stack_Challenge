@@ -1,4 +1,4 @@
-// models/ProductTransaction.js
+
 const mongoose = require('mongoose');
 
 const productTransactionSchema = new mongoose.Schema({
