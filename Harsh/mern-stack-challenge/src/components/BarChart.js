@@ -2,7 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 
-// Register Chart.js components
+
 Chart.register(...registerables);
 
 const BarChart = ({ chartData, month }) => {
@@ -10,7 +10,7 @@ const BarChart = ({ chartData, month }) => {
     return new Date(0, monthNumber - 1).toLocaleString("en", { month: "long" });
   };
 
-  // Prepare data for the Bar chart
+
   const data = {
     labels: chartData.map((item) => item.range),
     datasets: [
@@ -24,11 +24,11 @@ const BarChart = ({ chartData, month }) => {
     ],
   };
 
-  // Chart options for customization
+
   const options = {
     plugins: {
       legend: {
-        display: false, // hide legend
+        display: false,
       },
       title: {
         display: true,
@@ -54,7 +54,7 @@ const BarChart = ({ chartData, month }) => {
           },
         },
         grid: {
-          display: false, // remove grid lines from x-axis
+          display: false,
         },
       },
       y: {
@@ -66,7 +66,7 @@ const BarChart = ({ chartData, month }) => {
           },
         },
         grid: {
-          color: "#ccc", // light grey grid lines
+          color: "#ccc", 
         },
       },
     },
@@ -79,7 +79,7 @@ const BarChart = ({ chartData, month }) => {
   );
 };
 
-// Inline styles for container
+
 const chartContainerStyle = {
   width: "80%",
   margin: "0 auto",
