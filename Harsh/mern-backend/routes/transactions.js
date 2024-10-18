@@ -1,27 +1,27 @@
 const express = require('express');
 const ProductTransaction = require('../models/ProductTransaction');
 
-const router = express.Router(); // Make sure this line is included
+const router = express.Router();
 
-// Helper function to get month filter
+
 const getMonthFilter = (month) => {
   return {
     $expr: { $eq: [{ $month: '$dateOfSale' }, month] },
   };
 };
 
-// 1. New API to fetch transactions with statistics and bar chart data
+
 router.get('/transactions-with-stats', async (req, res) => {
   const { search, page = 1, perPage = 10, month } = req.query;
 
   const filter = {};
 
-  // Add the month filter if month is provided
+  
   if (month) {
     Object.assign(filter, getMonthFilter(parseInt(month)));
   }
 
-  // Add the search filter if search is provided
+
   if (search) {
     const priceSearch = parseFloat(search);
     filter.$or = [
@@ -40,7 +40,7 @@ router.get('/transactions-with-stats', async (req, res) => {
       .skip((page - 1) * parseInt(perPage))
       .limit(parseInt(perPage));
 
-    // Statistics
+  
     const soldItems = await ProductTransaction.countDocuments({ ...filter, sold: true });
     const notSoldItems = await ProductTransaction.countDocuments({ ...filter, sold: false });
     const totalSales = await ProductTransaction.aggregate([
@@ -48,7 +48,7 @@ router.get('/transactions-with-stats', async (req, res) => {
       { $group: { _id: null, totalSales: { $sum: '$price' } } },
     ]);
 
-    // Bar Chart Data
+    
     const priceRanges = [
       { range: '0-100', min: 0, max: 100 },
       { range: '101-200', min: 101, max: 200 },
@@ -80,6 +80,6 @@ router.get('/transactions-with-stats', async (req, res) => {
   }
 });
 
-// 2. Other existing API routes...
 
-module.exports = router; // Ensure you're exporting the router
+
+module.exports = router; 
