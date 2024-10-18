@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
   font-family: Arial, sans-serif;
   background-color: #EAF4F4;
@@ -36,7 +36,7 @@ button:hover {
   background-color: #E09A3B;
 }
 
-/* Table styles */
+
 table {
   margin: 0 auto;
   border-collapse: collapse;
@@ -58,7 +58,6 @@ table td {
   border: 1px solid #FFB545;
 }
 
-/* Pagination */
 div {
   text-align: center;
   margin-top: 20px;
@@ -69,7 +68,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Select dropdown */
 select {
   display: inline-block;
   margin-left: 10px;
@@ -81,7 +79,6 @@ select {
   font-size: 16px;
 }
 
-/* General container style */
 .statistics-box {
   width: 250px;
   background-color: #FFDD57;
@@ -92,7 +89,6 @@ select {
   font-family: Arial, sans-serif;
 }
 
-/* Heading */
 .statistics-box h3 {
   font-size: 20px;
   font-weight: bold;
@@ -107,21 +103,21 @@ select {
   margin-left: 5px;
 }
 
-/* Statistics info */
+
 .statistics-box p {
   font-size: 18px;
   margin: 5px 0;
   color: #000;
 }
 
-/* Adding space between label and value */
+
 .statistics-box p::before {
   content: "";
   display: inline-block;
-  width: 10px; /* Adjust width to align the text properly */
+  width: 10px;
 }
 
-/* Container for the search input and select dropdown */
+
 
 
 .input-container {
@@ -137,24 +133,23 @@ select {
 .input-field {
   padding: 8px;
   font-size: 16px;
-  width: 60%; /* Adjust width as needed */
+  width: 60%; 
 }
 
-/* Select container (aligning label and select dropdown) */
 .select-container {
   display: flex;
-  align-items: center; /* Align label and dropdown vertically */
+  align-items: center;
 }
 
-/* Select dropdown styling */
+
 .select-dropdown {
   padding: 8px;
   font-size: 16px;
-  margin-left: 10px; /* Space between the label and dropdown */
+  margin-left: 10px; 
 }
 
 .truncate-text {
-  max-width: 150px; /* Adjust to your desired width */
+  max-width: 150px; 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
