@@ -8,7 +8,7 @@ const TransactionsTable = () => {
   const [totalCount, setTotalCount] = useState(0);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const [month, setMonth] = useState("3"); // Default to March (3)
+  const [month, setMonth] = useState("3");
   const [statistics, setStatistics] = useState({ totalSales: 0, soldItems: 0, notSoldItems: 0 });
   const [barChartData, setBarChartData] = useState([]);
 
