@@ -8,7 +8,7 @@
 ## Technologies
 
 - **Frontend:**
-  - React
+  - React 
   
 
 - **Backend:**
